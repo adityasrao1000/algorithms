@@ -1,12 +1,29 @@
 package algorithms.string;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AllSubStringPalindroms {
 	
 
-	public static void main(String args[]){
-	String s ="jkbvtjtiop";
+  public static void main(String args[]){
+
+	Scanner sc = new Scanner(System.in);
+	
+	//table input from the user
+	System.out.println("Enter the string");  
+	String s=sc.nextLine(); 
+	sc.close();
+	Pattern pattern = Pattern.compile("\\s");
+	Matcher matcher = pattern.matcher(s);
+	
+	//check if white spaces exist
+	if(matcher.find()) {
+		System.out.println("string cannot contain white spaces. Please enter a string without white spaces.");
+		System.exit(0);
+	}
 	//create arraylist to hold all substrings
 	ArrayList<String> list = new ArrayList<String>();
 	//create arraylist to hold reversed substrings
@@ -39,6 +56,7 @@ public class AllSubStringPalindroms {
 	//only keep strings that are the same in both lists
 	list.retainAll(rev);
 	//print results
+	System.out.println("Total number of palindrome strings: "+ list.size());
 	System.out.println(list);
 	}
 
