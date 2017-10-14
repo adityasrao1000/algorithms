@@ -23,7 +23,7 @@ public class AllSubStringPalindroms {
 	  }
 	}
 	
-	//algorithm to reverse extract and reverse all substrings
+	//algorithm to  extract and reverse all substrings
 	 for(String obj:list)  {
 	   String temp = "";
 	   
