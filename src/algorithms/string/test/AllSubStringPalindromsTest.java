@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 import org.junit.Test; 
 public class AllSubStringPalindromsTest {
 	@Test  
-    public void testFindMax(){  
+    public void findNumOfPalindromes(){  
 		String s = "asa";
 		Pattern pattern = Pattern.compile("\\s");
 		Matcher matcher = pattern.matcher(s);
@@ -32,6 +32,8 @@ public class AllSubStringPalindromsTest {
 		  for(int j=i+1;j<=s.length();j++){
 		    if(s.substring(i,j).length()!= 1)
 			{
+		      //chech substring length for every case
+		      assertEquals(j-i,s.substring(i,j).length()); 
 			  list.add(s.substring(i,j));
 			}
 		  }
@@ -57,7 +59,7 @@ public class AllSubStringPalindromsTest {
 			System.exit(0);
 		}
 		
-		Set<String> set = new HashSet<String>(list);
+		//check total number of non-unique palindroms
 		assertEquals(3,list.size());  
 		
 	
