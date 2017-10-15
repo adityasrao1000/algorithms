@@ -1,21 +1,18 @@
-package algorithms.string;
+package algorithms.string.test;
+
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AllSubStringPalindroms {
-
-  public static ArrayList<String> palindrome(){
-	  Scanner sc = new Scanner(System.in);
-		
-		//table input from the user
-		System.out.println("Enter the string");  
-		String s=sc.nextLine(); 
-		sc.close();
+import org.junit.Test; 
+public class AllSubStringPalindromsTest {
+	@Test  
+    public void testFindMax(){  
+		String s = "asa";
 		Pattern pattern = Pattern.compile("\\s");
 		Matcher matcher = pattern.matcher(s);
 		
@@ -59,20 +56,11 @@ public class AllSubStringPalindroms {
 			System.out.println("no palindrome's exist");
 			System.exit(0);
 		}
-		return list;
 		
-  }
+		Set<String> set = new HashSet<String>(list);
+		assertEquals(3,list.size());  
+		
 	
-  public static void main(String args[]){
-
-	ArrayList<String> list = palindrome();
-	//covert reversed list into set so do not have same substrings repeated
-	Set<String> set = new HashSet<String>(list);
-	System.out.println("Total number of palindrome strings: "+ list.size());
-	
-	//print result, for result that match's total number of string print list instead of set
-	System.out.println(set);
-	System.out.println("\nnote: similar substrings are not printed more than once");
-	}
-
+        
+    }  
 }

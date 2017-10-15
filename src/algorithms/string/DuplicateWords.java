@@ -8,6 +8,9 @@ public class DuplicateWords {
 
 	static void duplicateWords(String inputString)
     {
+		if(inputString.trim().length()==0 || inputString == null) {
+			System.out.println("cannot commute for null string");
+		}
     //Splitting inputString into words
     String[] words = inputString.split(" ");
 
@@ -59,8 +62,9 @@ public static void main(String[] args)
     Scanner sc = new Scanner(System.in);
 	
 	//table input from the user
-	System.out.println("Enter a sentence");  
+	System.out.println("Enter a sentence");
 	String s=sc.nextLine();
+	
 	
     duplicateWords(s);
     sc.close();
