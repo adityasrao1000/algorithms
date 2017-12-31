@@ -6,7 +6,7 @@ public class BSTkeyRange {
     static Node root;
      
     /* The functions prints all the keys which in the given range [k1..k2].
-     The function assumes than k1 < k2 */
+     The function assumes that k1 < k2 */
     void Print(Node node, int k1, int k2) {
          
        if(node==null) {
