@@ -106,7 +106,6 @@ public class BinaryTree
         tree.insert(new Node(3));
         tree.insert(new Node(4));
         tree.insert(new Node(5));
-       
 
         System.out.println("Preorder traversal of binary tree is ");
         tree.printPreorder();
