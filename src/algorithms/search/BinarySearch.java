@@ -1,6 +1,6 @@
 package algorithms.search;
 
-public class BinarySearch {
+public class BinarySearch{
 
  //binary search for integer
  static void binary(int[] a,int key,int low, int high) {
@@ -23,7 +23,7 @@ public class BinarySearch {
  }
  
  //binary search for string
- static void binary(String[] a,String key,int low, int high) {
+ static  void binary(String[] a,String key,int low, int high) {
 	 
 	 if(low<=high) {
 		 int mid= (low+high)/2;
@@ -44,7 +44,7 @@ public class BinarySearch {
  
  public static void main(String args[]) {
 	 int[] a = {0,1,3,5,6,10,14,15,17,20};
-	 binary(a,1,0,a.length-1);
+	 binary(a,5,0,a.length-1);
 	 
 	 String[] b = {"aa","abb","acb","hjk","icv","xcds","xii","zaz","zz"};
 	 binary(b,"xii",0,a.length-1);
