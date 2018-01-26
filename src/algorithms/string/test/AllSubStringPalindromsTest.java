@@ -1,13 +1,13 @@
 package algorithms.string.test;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.junit.Test; 
 public class AllSubStringPalindromsTest {
+	
 	@Test  
     public void findNumOfPalindromes(){  
 		String s = "asa";
@@ -30,7 +30,7 @@ public class AllSubStringPalindromsTest {
 		  for(int j=i+1;j<=s.length();j++){
 		    if(s.substring(i,j).length()!= 1)
 			{
-		      //chech substring length for every case
+		      //check substring length for every case
 		      assertEquals(j-i,s.substring(i,j).length()); 
 			  list.add(s.substring(i,j));
 			}
@@ -57,7 +57,7 @@ public class AllSubStringPalindromsTest {
 			System.exit(0);
 		}
 		
-		//check total number of non-unique palindroms
+		//check total number of non-unique palindrom's
 		assertEquals(3,list.size());  
 		
 	
