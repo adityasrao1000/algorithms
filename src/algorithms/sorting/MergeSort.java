@@ -1,15 +1,17 @@
 package algorithms.sorting;
 
+import java.util.Arrays;
+
 class MergeSort
 {
-    // Merges two subarrays of arr[].
-    // First subarray is arr[l..m]
-    // Second subarray is arr[m+1..r]
-    void merge(int arr[], int l, int m, int r)
+    // Merges two sub arrays of arr[].
+    // First sub array is arr[l..m]
+    // Second sub array is arr[m+1..r]
+    void merge(Integer arr[], int low, int mid, int high)
     {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        // Find sizes of two sub arrays to be merged
+        int n1 = mid - low + 1;
+        int n2 = high - mid;
 
         /* Create temp arrays */
         int L[] = new int [n1];
@@ -17,9 +19,9 @@ class MergeSort
 
         /*Copy data to temp arrays*/
         for (int i=0; i<n1; ++i)
-            L[i] = arr[l + i];
+            L[i] = arr[low + i];
         for (int j=0; j<n2; ++j)
-            R[j] = arr[m + 1+ j];
+            R[j] = arr[mid + 1+ j];
 
 
         /* Merge the temp arrays */
@@ -28,7 +30,7 @@ class MergeSort
         int i = 0, j = 0;
 
         // Initial index of merged subarry array
-        int k = l;
+        int k = low;
         while (i < n1 && j < n2)
         {
             if (L[i] <= R[j])
@@ -61,45 +63,34 @@ class MergeSort
         }
     }
 
-    // Main function that sorts arr[l..r] using
-    // merge()
-    void sort(int arr[], int l, int r)
+   // split the array recursively 
+    void sort(Integer arr[], int low, int high)
     {
-        if (l < r)
+        if (low < high)
         {
             // Find the middle point
-            int m = (l+r)/2;
+            int mid = (low + high)/2;
 
             // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr , m+1, r);
+            sort(arr, low, mid);
+            sort(arr , mid+1, high);
 
             // Merge the sorted halves
-            merge(arr, l, m, r);
+            merge(arr, low, mid, high);
         }
     }
-
-    /* A utility function to print array of size n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
    
     public static void main(String args[])
     {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+        Integer arr[] = {12, 11, 13, 5, 6, 7};
 
         System.out.println("Given Array");
-        printArray(arr);
+        System.out.println(Arrays.deepToString(arr));
 
-        MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length-1);
+        MergeSort ms = new MergeSort();
+        ms.sort(arr, 0, arr.length-1);
 
         System.out.println("\nSorted array");
-        printArray(arr);
+        System.out.println(Arrays.deepToString(arr));
     }
 }

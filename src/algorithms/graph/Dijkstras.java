@@ -53,7 +53,7 @@ public class Dijkstras
                 {
                     if (min+matrix[nextNode][i] < distance[i])
                     {
-                        distance[i] = min+matrix[nextNode][i];
+                        distance[i] = min + matrix[nextNode][i];
                         preD[i] = nextNode;
                     }
  

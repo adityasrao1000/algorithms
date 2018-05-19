@@ -19,9 +19,7 @@ public class Knapsack {
     		return sack(arr,wt,cost,++index);
     	}else {
     		return sack(arr,wt,cost,++index);
-    	}
-    	
-    	
+    	}  	
     	
     }
 	
