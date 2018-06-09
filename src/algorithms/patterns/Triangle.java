@@ -1,5 +1,5 @@
 package algorithms.patterns;
 
 public interface Triangle {
-  void pyramid(int rows);
+	void pyramid(int rows);
 }

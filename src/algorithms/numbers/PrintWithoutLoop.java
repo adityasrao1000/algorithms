@@ -5,12 +5,10 @@ import java.util.Scanner;
 public class PrintWithoutLoop {
 	static int i;
 	public static void recursive(int n) 
-	{ 
-	 
-	  if(n <= i){
-	 
-	       System.out.println(n); 
-	         recursive(n+1);  
+	{  
+	  if(n <= i){ 
+        System.out.println(n); 
+        recursive(n+1);  
 	  }
 	}
 	 
@@ -24,7 +22,6 @@ public class PrintWithoutLoop {
 		  i = sc.nextInt();
 	  }
 	  sc.close();
-	  recursive(1); 
-	 
+	  recursive(1);  
 	}
 }
