@@ -31,7 +31,5 @@ public class ArmstrongNumber {
 
 		}
 		sc.close();
-
 	}
-
 }
