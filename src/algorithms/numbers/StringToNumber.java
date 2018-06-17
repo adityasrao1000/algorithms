@@ -2,14 +2,15 @@ package algorithms.numbers;
 
 public class StringToNumber {
 
-	public static void main(String[] args) {
-		String s = "123456";
+	public static int convert(String s) {
 		int sum = 0;
 		for (int i = 0; i < s.length(); i++) {
-
-			sum = (sum * 10) + (int) s.charAt(i);
+			sum = (sum * 10) + Character.getNumericValue(s.charAt(i));
 		}
+		return sum;
+	}
 
-		System.out.print(sum);
+	public static void main(String[] args) {
+		System.out.print(convert("123456"));
 	}
 }
