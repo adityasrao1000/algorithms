@@ -7,19 +7,22 @@ public class MultidimensionalArray {
 
 	public static void main(String args[]) {
 		int[][][] a = new int[3][3][3];
-		Scanner sc = new Scanner(System.in);
 
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				for (int k = 0; k < 3; k++) {
-					System.out.print("enter value for a[" + i + "]" + "[" + j + "]" + "[" + k + "]");
-					a[i][j][k] = sc.nextInt();
+		try (Scanner sc = new Scanner(System.in)) {
+			for (int i = 0; i < 3; i++) {
+				for (int j = 0; j < 3; j++) {
+					for (int k = 0; k < 3; k++) {
+						System.out.print("enter value for a[" + i + "]" + "[" + j + "]" + "[" + k + "]");
+						a[i][j][k] = sc.nextInt();
+					}
 				}
 			}
-		}
 
-		sc.close();
-		// print values of the array
-		System.out.println(Arrays.deepToString(a));
+			// print values of the array
+			System.out.println(Arrays.deepToString(a));
+
+		} finally {
+
+		}
 	}
 }

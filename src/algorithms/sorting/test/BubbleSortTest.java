@@ -1,9 +1,10 @@
 package algorithms.sorting.test;
 
-import static org.junit.Assert.*;
-import algorithms.sorting.BubbleSort;
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Before;
 import org.junit.Test;
+
+import algorithms.sorting.BubbleSort;
 
 public class BubbleSortTest {
 
@@ -12,12 +13,18 @@ public class BubbleSortTest {
 	int[] arr2 = { 1, 2, 4, 7, 8, 13, 56, 87 };
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		BubbleSort.bubbleSort(arr1);
 	}
 
 	@Test
-	public void bubbleSort() throws Exception {
+	public void bubbleSort() {
+		assertArrayEquals(arr1, arr2);
+	}
+	
+	@Test
+	public void bubbleSort1() {
+		BubbleSort.main(new String[2]);
 		assertArrayEquals(arr1, arr2);
 	}
 }

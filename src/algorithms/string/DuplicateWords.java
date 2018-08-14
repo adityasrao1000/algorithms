@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class DuplicateWords {
 
-	static void duplicateWords(String inputString) {
+	public static void duplicateWords(String inputString) {
 		if (inputString.trim().length() == 0 || inputString == null) {
 			System.out.println("cannot commute for null string");
 			System.exit(0);

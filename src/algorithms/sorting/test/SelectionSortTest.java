@@ -48,4 +48,13 @@ public class SelectionSortTest {
 		s.selectionSort(beforesort);
 		assertFalse(Arrays.equals(beforesort, aftersort));
 	}
+	
+	@Test
+	public void arraysNotEqual2() {
+		int[] beforesort = { 0, 4, 7, 8, 3, 1, 0 };
+		int[] aftersort = { 0, 1, 0, 3, 4, 7, 8 };
+		s.selectionSort(beforesort);
+		s.main(new String[0]);
+		assertFalse(Arrays.equals(beforesort, aftersort));
+	}
 }

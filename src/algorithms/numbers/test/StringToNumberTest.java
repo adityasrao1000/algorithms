@@ -1,5 +1,6 @@
 package algorithms.numbers.test;
 
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import algorithms.numbers.StringToNumber;
@@ -24,7 +25,7 @@ public class StringToNumberTest {
 	public void tonumber4() {
 		assertEquals(987654321, StringToNumber.convert("987654321"));
 	}
-	
+
 	@Test
 	public void tonumber5() {
 		assertEquals(987654321, StringToNumber.convert("987654321"));

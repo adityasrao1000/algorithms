@@ -2,7 +2,7 @@ package algorithms.sorting;
 
 import java.util.Arrays;
 
-class MergeSort {
+public class MergeSort {
 	// Merges two sub arrays of arr[].
 	// First sub array is arr[l..m]
 	// Second sub array is arr[m+1..r]
@@ -55,7 +55,7 @@ class MergeSort {
 	}
 
 	// split the array recursively
-	void sort(Integer arr[], int low, int high) {
+	public void sort(Integer arr[], int low, int high) {
 		if (low < high) {
 			// Find the middle point
 			int mid = (low + high) / 2;
