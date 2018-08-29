@@ -2,16 +2,17 @@ package algorithms.ds.stack;
 
 import java.util.Arrays;
 
-class Stack<T> implements Cloneable {
+class Stack<E> implements Cloneable {
 	private Object[] arr;
 	private int top = -1;
 	private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
 	Stack() {
+		
 		arr = new Object[DEFAULT_INITIAL_CAPACITY];
 	}
 
-	public void push(T o) {
+	public void push(E o) {
 		if (top >= (arr.length - 1)) {
 			arr = Arrays.copyOf(arr, arr.length + 16);
 			arr[++top] = o;
@@ -20,7 +21,8 @@ class Stack<T> implements Cloneable {
 		}
 	}
 
-	public Object pop() throws AssertionError {
+	@SuppressWarnings("unchecked")
+	public E pop() throws AssertionError {
 
 		if (top == -1) {
 			throw new AssertionError();
@@ -29,7 +31,7 @@ class Stack<T> implements Cloneable {
 		Object o = arr[top];
 		arr[top] = null;
 		top--;
-		return o;
+		return (E)o;
 	}
 
 	public int size() {
@@ -38,10 +40,9 @@ class Stack<T> implements Cloneable {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Stack<T> clone() {
+	public Stack<E> clone() {
 		try {
-			Stack<T> s = (Stack<T>) super.clone();
-			s.arr = this.arr.clone();
+			Stack<E> s = (Stack<E>) super.clone();
 			return s;
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();

@@ -1,8 +1,8 @@
 package algorithms.string;
 
-public class StringReverseInplace {
+final public class StringReverseInplace {
 
-	String reverse(String sb) {
+	public String reverse(String sb) {
 		StringBuffer s = new StringBuffer(sb);
 		int length = s.length();
 		int i;
@@ -12,7 +12,6 @@ public class StringReverseInplace {
 			s.setCharAt(i, s.charAt(otherEnd));
 			s.setCharAt(otherEnd, current);
 		}
-
 		return s.toString();
 	}
 
