@@ -74,7 +74,7 @@ public class DirectoryTraversal {
 			}
 			System.out.print("success!");
 		} catch (Exception e) {
-			System.out.print("failed!");
+			e.printStackTrace();
 		} finally {
 			bout.close();
 		}

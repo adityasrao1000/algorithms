@@ -10,17 +10,18 @@ public class BinaryTree {
 
 	void insert(Node n) {
 
+		Node curr = root;
+
 		if (root == null) {
 			this.root = n;
 			return;
 		}
 
-		Node curr = root;
-
 		while (curr != null) {
 			if (curr.key == n.key) {
 				return;
 			}
+			
 			if (curr.key < n.key) {
 
 				if (curr.right != null) {
