@@ -1,5 +1,8 @@
 package algorithms.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 	// Root of Binary Tree
 	Node root;
@@ -21,7 +24,7 @@ public class BinaryTree {
 			if (curr.key == n.key) {
 				return;
 			}
-			
+
 			if (curr.key < n.key) {
 
 				if (curr.right != null) {
@@ -104,14 +107,46 @@ public class BinaryTree {
 		printPreorder(root);
 	}
 
+	void printLevelOrder(Node root) {
+		Queue<Node> q = new LinkedList<>();
+		// add root node to queue
+		q.add(root);
+		while (!q.isEmpty()) {
+			Node n = q.poll();
+
+			System.out.print(n.key + " ");
+
+			if (n.left != null) {
+				q.add(n.left);
+			}
+
+			if (n.right != null) {
+				q.add(n.right);
+			}
+		}
+
+	}
+
+	int findDepth() {
+		if (root == null)
+			return 0;
+		return maxDepth(root);
+	}
+
+	int maxDepth(Node node) {
+		if (node == null)
+			return 0;
+		else {
+			return Math.max(1 + maxDepth(node.right), 1 + maxDepth(node.left));
+		}
+	}
+
 	// Driver method
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
-		tree.insert(new Node(1));
-		tree.insert(new Node(2));
-		tree.insert(new Node(3));
-		tree.insert(new Node(4));
 		tree.insert(new Node(5));
+		tree.insert(new Node(2));
+		tree.insert(new Node(6));
 
 		System.out.println("Preorder traversal of binary tree is ");
 		tree.printPreorder();
@@ -121,5 +156,10 @@ public class BinaryTree {
 
 		System.out.println("\nPostorder traversal of binary tree is ");
 		tree.printPostorder();
+
+		System.out.println("\nBFS: ");
+		tree.printLevelOrder(tree.root);
+		System.out.println("\ndepth: ");
+		System.out.println(tree.findDepth());
 	}
 }
